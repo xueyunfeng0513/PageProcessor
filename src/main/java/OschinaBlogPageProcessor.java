@@ -21,6 +21,9 @@ public class OschinaBlogPageProcessor implements PageProcessor {
         page.putField("title", page.getHtml().$("#img1", "alt"));
         page.putField("img", page.getHtml().$("#img1", "src"));
         page.putField("img-bak", page.getHtml().$("#img1", "data-otherside"));
+        page.putField("price", page.getHtml().xpath("[@class='listprice']/a/text()"));
+        //$(".listprice")[0].outerText
+
 
         //获取下一页
         String nplinks = page.getHtml().$("#ctl00_ContentPlaceHolder1_cmdNext_Bottom", "href").toString();
